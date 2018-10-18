@@ -41,7 +41,13 @@
 
 function showValues( obj ) {
   //Code Here
+  var arr = "";
+  for(var prop in obj){
+    arr += obj[prop];
+  }
+  return arr;
 }
+
 
 
 
@@ -54,6 +60,14 @@ function showValues( obj ) {
 */
 
 //Code Here
+var greaterThan10 = (obj) => {
+  for(let val in obj){
+    if(obj[val] > 10){
+      obj[val] = 0;
+    }
+  }
+  return obj
+}
 
 
 
@@ -66,6 +80,12 @@ function showValues( obj ) {
 */
 
 //Code Here
+var double =(obj)=>{
+  for(val in obj){
+    obj[val] *=2;
+  }
+  return obj
+}
 
 
 
@@ -80,6 +100,15 @@ function showValues( obj ) {
 */
 
 //Code Here
+var secrets = (obj) => {
+  var str = "";
+  for(prop in obj){
+    if (prop.startsWith('sh')){
+      str += obj[prop];
+    }
+  }
+  return str;
+}
 
 
 
@@ -111,6 +140,10 @@ function showValues( obj ) {
 */
 
 //Code Here
+var removePassword = (obj) => {
+  delete obj.password;
+  return obj
+}
 
 
 
@@ -130,6 +163,11 @@ var deleteTheBigNumbers = {
 */
 
 //Code Here
+for(prop in deleteTheBigNumbers){
+  if(deleteTheBigNumbers[prop] > 100){
+    delete deleteTheBigNumbers[prop];
+  }
+}
 
 
 
@@ -143,6 +181,14 @@ var deleteTheBigNumbers = {
 */
 
 //Code Here
+var startsWithK = (obj) => {
+  for(prop in obj) {
+    if(prop.startsWith('k')){
+      delete obj[prop];
+    }
+  }
+  return obj;
+}
 
 
 
@@ -158,5 +204,13 @@ var deleteTheBigNumbers = {
 */
 
 //Code Here
+var hiddenTreasure = (obj) => {
+  for(prop in obj){
+    if(!obj[prop].includes('treasure')){
+      delete obj[prop];
+    }
+  }
+  return obj;
+}
 
 
